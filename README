@@ -1,0 +1,33 @@
+1. ES Setup
+2. KIBANA Setup
+3. Logstash Setup
+4. Wazuh Setup
+5. Filebeat in wazuh server Setup
+6. Agent with wazuh agent
+
+Objective of lab: PHASE I
+
+Wazuh agent will send logs to wazuh manager
+wazuh manager will store the log in archieve / wazuh alerts
+This wazuh alert is by default parsed by wazuh decoders.. but just in case for future we need extra parsed value,
+filebeat on the same machine will read the wazuh alerts logs and send it to logstash
+logstash will have parser to further parse the logs
+logstash will send the parsed logs to elasticsearch
+now elasticseasrch has the alert data
+
+kibana will visualize this data from elasticsearch - parsed data will be on wazuh-alerts\* index.
+kibana will also have wazuh plugin to monitor wazuh agents, see wazuh alert logs, and much more.
+
+Objective of lab: PHASE II
+
+Secure everything: implement ssl/tls between each client and server
+Authentication
+
+Objective of lab: PHASE III
+
+Better management of password in docker-compose in .env maybe
+Refine every configuration in docker-compose as such no manual intervention is required.
+
+Objective of lab: PHASE IV
+
+Explore wazuh capabilities- - Detect malicious file and deletion. (Both linux and windows) - Malicious file download from browser, delete it. - SSH brute force (Both linux and windows)
