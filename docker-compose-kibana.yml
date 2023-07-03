@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  kibana:
+    image: kibana:7.9.3
+    container_name: kibana
+    hostname: kibana
