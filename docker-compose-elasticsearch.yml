@@ -6,4 +6,8 @@ services:
     hostname: elastic
     environment:
       - discovery.type=single-node
-#curl https://localhost:9200 -u elastic:TuX9JcUcagY84YhubAvP -k
+    networks:
+      - elkw
+
+networks:
+  elkw:

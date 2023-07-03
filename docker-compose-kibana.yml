@@ -4,3 +4,7 @@ services:
     image: kibana:7.9.3
     container_name: kibana
     hostname: kibana
+    networks:
+      - elkw
+networks:
+  elkw:
