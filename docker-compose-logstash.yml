@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  logstash:
+    image: logstash:7.9.3
+    container_name: logstash
+    hostname: logstash
+    networks:
+      - elkw
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+networks:
+  elkw:
