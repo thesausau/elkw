@@ -1,13 +1,15 @@
 version: '3.7'
 services:
   kibana:
-    image: kibana:7.9.3
+    build: ./kibana
     container_name: kibana
     hostname: kibana
     networks:
       - elkw
     volumes:
       - ./kibana/configs/kibana.yml:/usr/share/kibana/config/kibana.yml
+      - ./kibana/configs/optimize/wazuh/config:/usr/share/kibana/optimize/wazuh/config
+    #   - ./kibana/configs/optimize:/usr/share/kibana/optimize/
     ports:
       - 5601:5601
 networks:

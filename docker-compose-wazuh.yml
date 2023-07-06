@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  wazuh:
+    image: wazuh/wazuh-odfe:4.0.4_1.11.0
+    container_name: wazuh
+    hostname: wazuh
+    networks:
+      - elkw
+    volumes:
+      - ./wazuh/filebeat/filebeat.yml:/etc/filebeat/filebeat.yml
+      - ./wazuh/filebeat/wazuh-template.json:/etc/filebeat/wazuh-template.json
+networks:
+  elkw:
