@@ -7,6 +7,8 @@ services:
     networks:
       - elkw
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/configs/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/configs/pipeline:/usr/share/logstash/pipeline
+
 networks:
   elkw:
