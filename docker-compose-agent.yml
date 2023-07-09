@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  wazuh-agent:
+    build: ./wazuh-agent
+    container_name: wazuh-agent
+    hostname: agentIMS
+    networks:
+      - elkw
+networks:
+  elkw:
